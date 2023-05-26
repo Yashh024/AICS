@@ -1,0 +1,12 @@
+import pandas as pd
+tatanic = pd.read_csv("train.csv")
+
+tatanic.head(6)
+
+tatanic["Age"] = tatanic["Age"].fillna(tatanic["Age"].median())
+
+tatanic = tatanic.drop(columns = ["Cabin"])
+
+tatanic["FamilySize"] = tatanic["SibSp"] + tatanic["Parch"] + 1
+
+tatanic.head(6)

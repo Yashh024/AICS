@@ -1,0 +1,14 @@
+from pandas import read_csv
+df = read_csv("Real-estate dataset.csv")
+X = df.iloc[: ,: -1]
+Y = df.iloc[: ,-1]
+
+print(len(X))
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size= 0.2, random_state=0)
+
+print(len(X_train))
+print(len(X_test))
+print(len(Y_train))
+print(len(Y_test))
